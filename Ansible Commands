@@ -1,0 +1,36 @@
+ansible --version
+ansible -m ping all
+ansible all -a "whoami"
+ansible all -a "uname"
+ssh -vvv -i <key-file-location> <ec2-user@{pubilc_IP}>
+chmod 400 <key-file-location>
+ansible all -a "uname"
+ansible all -a "uname -a"
+ansible all -a "pwd"
+ansible all -a "python --version"
+ansible dev -a "python --version"
+ansible qa -a "python --version"
+ansible first -a "python --version"
+ansible groupofgroups -a "python --version"
+ansible devsubset -a "python --version"
+ansible --list-host all
+ansible --list-host dev
+ansible --list-host first
+ansible --list-host \!first
+ansible --list-host qa:dev
+ansible-playbook playbooks/01-ping-ansible.yml
+ansible-playbook playbooks/02-shell-ansible.yml 
+ansible-playbook playbooks/03-variables-ansible.yml 
+ansible-playbook playbooks/03-variables-ansible.yml -e variable1=CommandLineValue
+ansible-playbook playbooks/04-ansible-facts-ansible.yml 
+ansible-playbook playbooks/05-install-apache-ansible.yml 
+ansible-playbook playbooks/06-playbooks.yml 
+ansible-playbook playbooks/06-playbooks.yml --list-tasks
+ansible-playbook playbooks/06-playbooks.yml --list-hosts
+ansible-playbook playbooks/06-playbooks.yml --list-tags
+ansible-playbook -l dev playbooks/01-ping-ansible.yml
+ansible-playbook playbooks/07-conditionals-and-loops.yml 
+ansible-inventory --list
+ansible-inventory --graph
+ansible-playbook playbooks/08-dynamic-inventory-ping.yml 
+ansible-playbook playbooks/09-create-ec2.yml 
